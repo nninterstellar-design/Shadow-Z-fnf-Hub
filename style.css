@@ -17,8 +17,7 @@ header {
     height: 100%;
     object-fit: cover;
     position: absolute;
-    opacity: 0.85;           /* slightly lowered for better contrast */
-    filter: grayscale(100%); /* if your bg image has color, this forces b&w */
+    opacity: 0.9;
 }
 
 .logo {
@@ -31,7 +30,7 @@ header {
     z-index: 2;
 }
 
-/* ─────────────── Search Bar – glowing, glassmorphic, now b&w ─────────────── */
+/* ─────────────── Search Bar – enhanced, glowing, glassmorphic ─────────────── */
 .search-container {
     position: absolute;
     top: 58%;           /* adjust this to position it nicely under the logo */
@@ -48,14 +47,14 @@ header {
     padding: 20px 32px;
     font-size: 1.5em;
     font-weight: 500;
-    background: linear-gradient(135deg, rgba(40, 40, 40, 0.85), rgba(20, 20, 20, 0.75));
-    border: 3px solid #888;
+    background: linear-gradient(135deg, rgba(40,40,40,0.75), rgba(80,80,80,0.65));
+    border: 3px solid #777;
     border-radius: 60px;
     color: #eee;
     outline: none;
     box-shadow: 
-        0 0 30px rgba(255, 255, 255, 0.08),
-        inset 0 0 15px rgba(255, 255, 255, 0.06);
+        0 0 30px rgba(160,160,160,0.4),
+        inset 0 0 15px rgba(200,200,200,0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: all 0.4s ease;
@@ -65,38 +64,37 @@ header {
 
 .search-box::placeholder {
     color: #aaa;
-    opacity: 0.7;
+    opacity: 0.8;
     font-weight: 400;
 }
 
 .search-box:focus {
-    border-color: #ddd;
+    border-color: #ccc;
     box-shadow: 
-        0 0 60px rgba(255, 255, 255, 0.25),
-        inset 0 0 20px rgba(255, 255, 255, 0.12);
-    background: linear-gradient(135deg, rgba(60, 60, 60, 0.9), rgba(30, 30, 30, 0.8));
+        0 0 60px rgba(200,200,200,0.6),
+        inset 0 0 20px rgba(220,220,220,0.3);
+    background: linear-gradient(135deg, rgba(60,60,60,0.85), rgba(100,100,100,0.75));
     transform: scale(1.03);
     color: #ffffff;
 }
 
-/* Subtle glow pulse on load – now white/silver */
+/* Optional: subtle glow pulse on load */
 @keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.08); }
-    50%      { box-shadow: 0 0 50px rgba(255, 255, 255, 0.18); }
+    0%, 100% { box-shadow: 0 0 30px rgba(160,160,160,0.4); }
+    50%      { box-shadow: 0 0 50px rgba(200,200,200,0.55); }
 }
-
 .search-box {
-    animation: glow-pulse 7s infinite ease-in-out;
+    animation: glow-pulse 6s infinite ease-in-out;
 }
-
 /* ────────────────────────────────────────── */
+
 .sub {
     position: absolute;
     bottom: 60px;
     width: 100%;
     font-size: 3em;
     color: #ccc;
-    text-shadow: 0 0 40px #000;
+    text-shadow: 0 0 50px #444;
     z-index: 3;
 }
 
@@ -123,10 +121,9 @@ header {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5em;
-    color: #fff;
+    color: #ddd;
     z-index: 10;
     pointer-events: none;
-    text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
 button {
@@ -134,21 +131,20 @@ button {
     top: 25px;
     right: 30px;
     padding: 18px 34px;
-    background: #222;
-    color: #fff;
-    border: 2px solid #777;
+    background: #333;
+    color: white;
+    border: none;
     border-radius: 14px;
     cursor: pointer;
     font-size: 1.35em;
     z-index: 10001;
-    box-shadow: 0 0 25px rgba(255,255,255,0.05);
+    box-shadow: 0 0 35px #555;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #444;
-    border-color: #ccc;
-    box-shadow: 0 0 50px rgba(255,255,255,0.2);
+    background: #555;
+    box-shadow: 0 0 70px #aaa;
     transform: translateY(-4px);
 }
 
@@ -160,20 +156,20 @@ button:hover {
 }
 
 .card {
-    background: rgba(20, 20, 20, 0.85);
-    border: 3px solid #666;
+    background: rgba(30,30,30,0.8);
+    border: 10px solid #666;
     border-radius: 40px;
     padding: 60px 20px;
     text-align: center;
     font-size: 2.2em;
     cursor: pointer;
-    box-shadow: 0 0 50px rgba(0,0,0,0.6);
+    box-shadow: 0 0 80px #444;
     transition: 0.4s;
     backdrop-filter: blur(4px);
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 90px rgba(255,255,255,0.15);
-    border-color: #bbb;
+    box-shadow: 0 0 120px #aaa;
+    border-color: #ccc;
 }
